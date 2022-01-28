@@ -1,0 +1,27 @@
+{
+  "name": "Islamic_api",
+  "version": "1.0.0",
+  "description": "Islamic_api open source api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saifhany/Islamic_api.git"
+  },
+  "keywords": [],
+  "author": "saifhany <saifhany898@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saifhany/Islamic_api/issues"
+  },
+  "homepage": "https://github.com/saifhany/Islamic_api#readme",
+  "dependencies": {
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
+}
