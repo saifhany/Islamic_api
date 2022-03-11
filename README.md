@@ -2,7 +2,7 @@
 Islamic_api open source api 
 
 # Islamy API
-> Additional information or tagline
+> description of the system
 
 It is a religious “Islamic” application that a person can log in with his mobile number, name and email. He can synchronize his contacts, and if they are already registered in the application, they will be able to see each other. If the person you want to see makes himself visible, he can see how many parts he has completed from the door Motivating each other to read the Noble Qur’an Download a post in the name of the deceased person. Others can see the post, and the person who is reading a part can record it so that others can resume the parts that have passed. You can also add challenges to read certain parts in a certain period
 
