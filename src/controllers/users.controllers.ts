@@ -347,9 +347,9 @@ export const create = async (
           }
         })
         console.log(existsusers);
-        var result = existsusers.filter(function (o1) {
+        var result = existsusers.filter((o1) =>{
           // @ts-ignore
-          return contacts.some(function (o) {
+          return contacts.some((o) => {
               return o1.phone === o.phone; // return the ones with equal id
          });
       });
