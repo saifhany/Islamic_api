@@ -157,9 +157,10 @@ export const create = async (
           lastPage:true,
         }, 
       });
-      var result = users.filter((o1): boolean | undefined =>
-
-          userFriends?.usercontacts.some((o2) => o1.phone === o2.phone));
+        // @ts-ignore
+      var result = users.filter((o1): any =>
+          // @ts-ignore
+          userFriends?.usercontacts.some((o2): boolean => o1.phone === o2.phone));
           console.log(result);
 
       
@@ -346,9 +347,9 @@ export const create = async (
           }
         })
         console.log(existsusers);
-        var result = existsusers.filter((o1) =>{
-          
-          return contacts.some((o: { phone: string; }) => {
+        var result = existsusers.filter(function (o1): any {
+          // @ts-ignore
+          return contacts.some(function (o): boolean {
               return o1.phone === o.phone; // return the ones with equal id
          });
       });
