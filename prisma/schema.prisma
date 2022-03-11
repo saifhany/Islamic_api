@@ -1,0 +1,61 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+import config from '../config';
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://qxysrheo:smn_f2_nH7b7b0Khdg2ZNit8breMVEqf@castor.db.elephantsql.com/qxysrheo"
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  password     String     
+  name         String?
+  isHidden     Boolean   @default(false)
+  phone        String       @unique
+  otp          Int?       @default(0)
+  finishedPage Int       @default(0) 
+  lastPage     Int       @default(0)
+  role         Role      @default(USER)
+  usercontacts Contact[]
+  posts        Post[]
+  Khatma       Khatma[]
+}
+model Contact {
+  id     Int   @id @default(autoincrement())
+  phone  String?
+  User   User? @relation(fields: [userId], references: [id])
+  userId Int?
+}
+
+model Post {
+  id               Int       @id @default(autoincrement())
+  timeToStart      DateTime  @default(now())
+  timeToEnd        String?
+  title            String?
+  numberOfJuzz     Int
+  done             Boolean   @default(false)
+  joined           Int[]
+  submittedUsers   Int[]
+  unSubmittedUsers Int[]
+  publisher        User      @relation(fields: [publisherId], references: [id])
+  publisherId      Int
+}
+
+model Khatma {
+  id          Int    @id @default(autoincrement())
+  title       String
+  publisher   User   @relation(fields: [publisherId], references: [id])
+  publisherId Int
+  juzzs       Json?
+}
+
+enum Role {
+  USER
+  ADMIN
+}
