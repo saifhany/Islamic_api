@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Islamic_api open source api",
   "main": "index.js",
+  "engine": "6.11.1",
+  "node": "0.12.x",
+   "npm": "2.5.x",
   "scripts": {
     "dev": "nodemon src/index.ts",
     "build": "tsc",
