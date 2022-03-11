@@ -157,9 +157,8 @@ export const create = async (
           lastPage:true,
         }, 
       });
-        // @ts-ignore
       var result = users.filter((o1) =>
-          // @ts-ignore
+
           userFriends?.usercontacts.some((o2) => o1.phone === o2.phone));
           console.log(result);
 
@@ -348,8 +347,8 @@ export const create = async (
         })
         console.log(existsusers);
         var result = existsusers.filter((o1) =>{
-          // @ts-ignore
-          return contacts.some((o) => {
+          
+          return contacts.some((o: { phone: string; }) => {
               return o1.phone === o.phone; // return the ones with equal id
          });
       });
