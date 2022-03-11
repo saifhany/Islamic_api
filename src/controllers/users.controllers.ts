@@ -4,7 +4,7 @@ import config from '../config';
 import {comparePassword, hashPassword} from "../utils/utils";
 import { PrismaClient } from '@prisma/client';
 import  client  from 'twilio';
-let Client =client('ACf6b0468aab3299b1806e13d77b357fd7', '8097028bbcfbd9a26f31cb7dd21576ed',{lazyLoading:true});
+let Client =client( config.ACCOUNT_SID as string, config.AUTH_TOKEN as string,{lazyLoading:true});
 
 const prisma = new PrismaClient()
 
