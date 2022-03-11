@@ -157,7 +157,7 @@ export const create = async (
           lastPage:true,
         }, 
       });
-      var result = users.filter((o1) =>
+      var result = users.filter((o1): boolean | undefined =>
 
           userFriends?.usercontacts.some((o2) => o1.phone === o2.phone));
           console.log(result);
