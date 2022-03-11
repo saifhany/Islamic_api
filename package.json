@@ -4,7 +4,7 @@
   "description": "Islamic_api open source api",
   "main": "index.js",
   "engines": {
-    "npm": "6.x",
+    "npm": "8.x",
     "node": "16.x"
 
   },
