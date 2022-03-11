@@ -158,7 +158,7 @@ export const create = async (
         }, 
       });
         // @ts-ignore
-      var result = users.filter((o1) =>
+      var result = users.filter((o1): any =>
           // @ts-ignore
           userFriends?.usercontacts.some((o2) => o1.phone === o2.phone));
           console.log(result);
@@ -245,7 +245,7 @@ export const create = async (
               body: `your otp ${user.otp}`,
              from: '+13194698785',
             to: `${phone}`
-  }).then((message): void => console.log(message.sid));
+  }).then((message:any): void => console.log(message.sid));
       }
       res.json({
         status: 'success',
@@ -347,9 +347,9 @@ export const create = async (
           }
         })
         console.log(existsusers);
-        var result = existsusers.filter(function (o1) {
+        var result = existsusers.filter((o1) => {
           // @ts-ignore
-          return contacts.some(function (o) {
+          return contacts.some((o) => {
               return o1.phone === o.phone; // return the ones with equal id
          });
       });
