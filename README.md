@@ -39,7 +39,8 @@ npx prisma db push
 
 # DATABASEDESIGN
 
-![data base design](https://lh6.googleusercontent.com/MCPPe-os7_3PPa_xubZ6PhzUFhGTmvRzNoZv3ISUp7NGHJvTIV5iLSEkgvg3l20LlcYf8jrl-9FVonyFPzc3=w1920-h902)
+<!-- ![data base design](https://lh6.googleusercontent.com/MCPPe-os7_3PPa_xubZ6PhzUFhGTmvRzNoZv3ISUp7NGHJvTIV5iLSEkgvg3l20LlcYf8jrl-9FVonyFPzc3=w1920-h902) -->
+![islamy](https://user-images.githubusercontent.com/64452976/157985578-6adc5489-d27c-42bd-a640-807ef5c5212b.PNG)
 
 
 ## Features
