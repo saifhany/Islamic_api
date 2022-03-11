@@ -2,7 +2,7 @@
 Islamic_api open source api 
 
 # Islamy API
-> Additional information or tagline
+> description of the system
 
 It is a religious “Islamic” application that a person can log in with his mobile number, name and email. He can synchronize his contacts, and if they are already registered in the application, they will be able to see each other. If the person you want to see makes himself visible, he can see how many parts he has completed from the door Motivating each other to read the Noble Qur’an Download a post in the name of the deceased person. Others can see the post, and the person who is reading a part can record it so that others can resume the parts that have passed. You can also add challenges to read certain parts in a certain period
 
@@ -39,7 +39,8 @@ npx prisma db push
 
 # DATABASEDESIGN
 
-![data base design](https://lh6.googleusercontent.com/MCPPe-os7_3PPa_xubZ6PhzUFhGTmvRzNoZv3ISUp7NGHJvTIV5iLSEkgvg3l20LlcYf8jrl-9FVonyFPzc3=w1920-h902)
+<!-- ![data base design](https://lh6.googleusercontent.com/MCPPe-os7_3PPa_xubZ6PhzUFhGTmvRzNoZv3ISUp7NGHJvTIV5iLSEkgvg3l20LlcYf8jrl-9FVonyFPzc3=w1920-h902) -->
+![islamy](https://user-images.githubusercontent.com/64452976/157985578-6adc5489-d27c-42bd-a640-807ef5c5212b.PNG)
 
 
 ## Features
@@ -64,11 +65,9 @@ NODE_ENV=dev
 * BYCRPT_PASSWORD=...
 * SLAT_ROUNDS=...
 * TOKEN_SECRET=...
-* TWLIO_API_KEY=...
-* TWLIO_API_ID=....
 * DATABASE_URL=....
-
-
+* ACCOUNT_SID=....
+* AUTH_TOKEN=....
 ## Contributing to Transcriptase
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
