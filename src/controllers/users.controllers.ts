@@ -158,7 +158,7 @@ export const create = async (
         }, 
       });
         // @ts-ignore
-      var result = users.filter((o1): any =>
+      var result = users.filter((o1)  =>
           // @ts-ignore
           userFriends?.usercontacts.some((o2) => o1.phone === o2.phone));
           console.log(result);
