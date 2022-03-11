@@ -245,7 +245,7 @@ export const create = async (
               body: `your otp ${user.otp}`,
              from: '+13194698785',
             to: `${phone}`
-  }).then((message:any): void => console.log(message.sid));
+  }).then((message): void => console.log(message.sid));
       }
       res.json({
         status: 'success',
