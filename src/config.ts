@@ -12,7 +12,9 @@ const {
      POSTGRES_PASSWORD,
      BYCRPT_PASSWORD,
      SLAT_ROUNDS,
-     TOKEN_SECRET
+     TOKEN_SECRET,
+     ACCOUNT_SID,
+     AUTH_TOKEN
 } =  process.env;
 export default {
     port:PORT,
@@ -23,5 +25,7 @@ export default {
     password:POSTGRES_PASSWORD,
     pepper:BYCRPT_PASSWORD,
     salt:SLAT_ROUNDS,
-    tokenSecret:TOKEN_SECRET
+    tokenSecret:TOKEN_SECRET,
+    ACCOUNT_SID:ACCOUNT_SID,
+    AUTH_TOKEN:AUTH_TOKEN
 }
