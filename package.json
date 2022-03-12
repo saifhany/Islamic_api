@@ -2,7 +2,7 @@
   "name": "Islamic_api",
   "version": "1.0.0",
   "description": "Islamic_api open source api",
-  "main": "index.js",
+  "main": "index.ts",
   "engines": {
     "npm": "8.x",
     "node": "16.x"
