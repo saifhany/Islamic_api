@@ -158,7 +158,11 @@ export const create = async (
         }, 
       });
       var result = users.filter((o1): any =>
-          userFriends?.usercontacts.some((o2): boolean => o1.phone === o2.phone));
+          {
+          return userFriends?.usercontacts.some((o2): boolean => {
+            return o1.phone === o2.phone;
+          });
+        });
           console.log(result);
 
       
@@ -345,12 +349,9 @@ export const create = async (
           }
         })
         console.log(existsusers);
-        var result = existsusers.filter(function (o1): any {
-          // @ts-ignore
-          return contacts.some(function (o): boolean {
-              return o1.phone === o.phone; // return the ones with equal id
-         });
-      });
+        var result = existsusers.filter((o1): any =>
+            // @ts-ignore
+            contacts.some((o): boolean => o1.phone === o.phone));
         // @ts-ignore
        const id =  req.user.id as string
       const user = await prisma.user.update({
