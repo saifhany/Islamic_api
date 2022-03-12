@@ -157,10 +157,11 @@ export const create = async (
           lastPage:true,
         }, 
       });
-        // @ts-ignore
-      var result = users.filter((o1): any =>
-          // @ts-ignore
-          userFriends?.usercontacts.some((o2) => o1.phone === o2.phone));
+
+      let result = users.filter((o1): any =>
+          userFriends?.usercontacts.some((o2): boolean => {
+            return o1.phone === o2.phone;
+          }));
           console.log(result);
 
       
@@ -347,12 +348,9 @@ export const create = async (
           }
         })
         console.log(existsusers);
-        var result = existsusers.filter(function (o1) {
-          // @ts-ignore
-          return contacts.some(function (o) {
-              return o1.phone === o.phone; // return the ones with equal id
-         });
-      });
+        let result = existsusers.filter((o1): any =>
+            // @ts-ignore
+            contacts.some((o): boolean => o1.phone === o.phone));
         // @ts-ignore
        const id =  req.user.id as string
       const user = await prisma.user.update({
