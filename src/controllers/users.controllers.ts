@@ -157,9 +157,7 @@ export const create = async (
           lastPage:true,
         }, 
       });
-        // @ts-ignore
       var result = users.filter((o1): any =>
-          // @ts-ignore
           userFriends?.usercontacts.some((o2): boolean => o1.phone === o2.phone));
           console.log(result);
 
