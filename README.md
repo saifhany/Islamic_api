@@ -51,11 +51,10 @@ npx prisma db push
 * A person can add a challenge to read or memorize some surahs or parts of the Qur’an in a specific period, and after the end of the period, it can be terminated by the publisher, and the admin can delete the publication
 
 
-## Configuration
+## Configuration and DataBase confg here
 
-PORT=3000
-NODE_ENV=dev
-# set your database connection information here
+* PORT=3000
+* NODE_ENV=dev
 * POSTGRES_HOST=...
 * POSTGRES_PORT=...
 * POSTGRES_DB=...
@@ -68,6 +67,7 @@ NODE_ENV=dev
 * DATABASE_URL=....
 * ACCOUNT_SID=....
 * AUTH_TOKEN=....
+
 ## Contributing to Transcriptase
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
