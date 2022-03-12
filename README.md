@@ -97,7 +97,7 @@ Pull requests are the best way to propose changes to the codebase (we use Github
 
 - android: https://your.github.com/awesome-project/
 - ios : https://github.com/your/awesome-project/
-- API documentation: https://github.com/your/awesome-project/issues
+- API documentation: https://www.getpostman.com/collections/3996cc1c6ba15db66078
 - frontend: https://github.com/your/other-project/
 
 
