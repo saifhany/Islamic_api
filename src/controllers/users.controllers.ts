@@ -158,7 +158,7 @@ export const create = async (
         }, 
       });
 
-      let result = users.filter((o1): any =>
+      let result:any = users.filter((o1): any =>
           userFriends?.usercontacts.some((o2): boolean => {
             return o1.phone === o2.phone;
           }));
@@ -348,7 +348,7 @@ export const create = async (
           }
         })
         console.log(existsusers);
-        let result = existsusers.filter((o1): any =>
+        let result:any = existsusers.filter((o1): any =>
             // @ts-ignore
             contacts.some((o): boolean => o1.phone === o.phone));
         // @ts-ignore
