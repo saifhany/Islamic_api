@@ -158,8 +158,8 @@ export const create = async (
         }, 
       });
 
-      let result:any = users.filter((o1): any =>
-          userFriends?.usercontacts.some((o2): boolean => {
+      let result:any = users.filter((o1:any): any =>
+          userFriends?.usercontacts.some((o2:any): boolean => {
             return o1.phone === o2.phone;
           }));
           console.log(result);
@@ -348,9 +348,9 @@ export const create = async (
           }
         })
         console.log(existsusers);
-        let result:any = existsusers.filter((o1): any =>
+        let result:any = existsusers.filter((o1:any): any =>
             // @ts-ignore
-            contacts.some((o): boolean => o1.phone === o.phone));
+            contacts.some((o:any): boolean => o1.phone === o.phone));
         // @ts-ignore
        const id =  req.user.id as string
       const user = await prisma.user.update({
