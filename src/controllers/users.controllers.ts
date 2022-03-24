@@ -17,16 +17,16 @@ export const create = async (
     try {
       const getuser = await prisma.user.findUnique({
         where: {
-          email:email,
+          phone:phone,
         },
         select: {
-          email: true
+          phone: true
       }
       });
       if(getuser){
         res.json({
           status: 'failed',
-          message: 'User Already exists',
+          message: 'المستخدم موجود بالفعل',
         })   
       } else{
         const UUser = await prisma.user.create({
@@ -41,12 +41,14 @@ export const create = async (
         res.json({
           status: 'success',
           data: UUser,
-          message: 'User created successfully',
+          message: 'تم اضافه المستخدم بنجاح',
         })          
       }
     } catch (err) {
-      next(err)
-    }
+    res.json({
+          status: 'failed',
+          message: 'هناك خطأ ما',
+        })      }
   }
  
   export const resetPassword = async (
@@ -81,12 +83,12 @@ export const create = async (
         res.json({
           status: 'success',
           data: UUser,
-          message: 'User created successfully',
+          message: 'تم ارسال رمز التأكيد بنجاح',
         })          
       }else{
         res.json({
           status: 'Failed',
-          message: 'user not found ro7 3ndha yala ya kdab',
+          message: 'لم يتم العثور علي المستخدم',
         })
       }
     } catch (err) {
@@ -100,6 +102,8 @@ export const create = async (
     next: NextFunction
   ) => {
     try {
+      // skip * (take - 1)
+      // limit: pageSize
       const query = req.query;
       //@ts-ignore
       const skip = parseInt(query.page) || 0;
@@ -108,16 +112,19 @@ export const create = async (
 			const users = await prisma.user.findMany({ 
         where: {isHidden:false},
         select: {password:false,name:true,email:true,lastPage:true,phone:true,finishedPage:true}, 
-        skip:skip,
+        skip:skip * (take - 1),
         take:take 
-      });
+      }); 
       res.json({
         status: 'success',
         data: users,
-        message: 'User retrieved successfully',
+        message: 'تم عرض المستخدم بنجاح',
       })
     } catch (err) {
-      next(err)
+      res.json({
+        status: 'failed',
+        message: 'لم يتم عرض المستخدمين',
+      })
     }
   }
   
@@ -168,10 +175,13 @@ export const create = async (
       res.json({
         status: 'success',
         data: result,
-        message: 'User retrieved successfully',
+        message: 'تم عرض بيانات جهات  اتصالك بنجاح',
       })
     } catch (err) {
-      next(err)
+      res.json({
+        status: 'failed',
+        message: 'خطأ لم يتم العثور علي مستخدمين',
+      })
     }
   }
   
@@ -209,7 +219,7 @@ export const create = async (
       res.json({
         status: 'success',
         data: {...userr ,token},
-        message: 'User retrieved successfully',
+        message: 'تم تسجيل الدخول بنجاح',
       })
     } catch (err) {
       next(err)
@@ -251,7 +261,7 @@ export const create = async (
       res.json({
         status: 'success',
         data: {...userr},
-        message: 'User retrieved successfully',
+        message: 'تم تغيير كلمه السر بنجاح',
       })
     } catch (err) {
       next(err)
@@ -276,7 +286,7 @@ export const create = async (
       res.json({
         status: 'success',
         data: user,
-        message: 'User retrieved successfully',
+        message: 'تم التعديل بنجاح',
       })
     } catch (err) {
       next(err)
@@ -301,7 +311,7 @@ export const create = async (
       res.json({
         status: 'success',
         data: user,
-        message: 'User retrieved successfully',
+        message: 'تمت تعديل رقم الصفحه بنجاح',
       })
     } catch (err) {
       next(err)
@@ -324,7 +334,7 @@ export const create = async (
       res.json({
         status: 'success',
         data: user,
-        message: 'User updated successfully',
+        message: 'تمت تغيير الصلاحيه بنجاح',
       })
     } catch (err) {
       next(err)
@@ -367,7 +377,7 @@ export const create = async (
       res.json({
         status: 'success',
         data: result,
-        message: 'User updated successfully',
+        message: 'تمت اضافه جهات الاتصال بنجاح',
       })
     } catch (err) {
       next(err)
