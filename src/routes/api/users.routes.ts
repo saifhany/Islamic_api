@@ -1,11 +1,14 @@
 import { Router } from 'express';
 import * as controllers from '../../controllers/users.controllers';
 import authenticationMiddleware from '../../middleware/authentication.middleware';
+import userCreateValidator   from '../../validators/users';
+import runValidation  from '../../validators/index';
 import admin from '../../middleware/admin.middleware';
 
 const routes = Router()
 // api/users
-routes.route('/').post(controllers.create)
+// @ts-ignore
+routes.route('/').post(userCreateValidator, runValidation ,controllers.create)
 routes.route('/login').post(controllers.login)
 routes.route('/').get(controllers.getMany)
 routes.route('/userConnected').get(authenticationMiddleware,controllers.userConnected)

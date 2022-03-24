@@ -35,9 +35,9 @@ model Contact {
 
 model Post {
   id               Int       @id @default(autoincrement())
-  timeToStart      DateTime  @default(now())
+  cretedAt      DateTime  @default(now())
+  timeToStart      String?
   timeToEnd        String?
-  title            String?
   numberOfJuzz     Int
   done             Boolean   @default(false)
   joined           Int[]

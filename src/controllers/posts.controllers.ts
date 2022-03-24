@@ -9,14 +9,14 @@ export const create = async (
     res: Response,
     next: NextFunction
   ) => {
-    const {  timeToEnd , title , numberOfJuzz } = req.body;
+    const {  timeToEnd , timeToStart , numberOfJuzz } = req.body;
       // @ts-ignore
     const id =  req.user.id  as number;
     try {
       const result = await prisma.post.create({
         data: {
           timeToEnd,
-          title,
+          timeToStart,
           numberOfJuzz,
           publisherId: id
            }    
