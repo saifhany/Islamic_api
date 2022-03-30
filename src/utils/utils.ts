@@ -1,7 +1,7 @@
 import config from "../config";
 import bcrypt from "bcrypt";
 import { PrismaClient } from '@prisma/client'
-import cron  from 'node-cron';
+import cron  from "node-cron";
 
 
 const prisma = new PrismaClient()
@@ -19,17 +19,21 @@ export const comparePassword = (password:string, hashed:any) => {
 //   @ts-ignore
 
 
-function recurring() {  
-    cron.schedule('59 23 * * *', async () => {     
-         await prisma.post.deleteMany({})
-    });
-}
+// function recurring() {  
+//     cron.schedule('59 23 * * *', async () => {     
+//          await prisma.post.deleteMany({})
+//     });
+// }
+// async function DeleteMany(){
+   
+// }
+export default async  function cronjobs() {
+    cron.schedule('59 23 * * *', async () => {
+       const deleted =   await  prisma.post.deleteMany({where:{done:true}});
+       if(deleted)
+          console.log("deleted")
+        });
+    }
 
-function ff() {  
-    cron.schedule('* * * * *', function() {
-        console.log('running a task every minute');
-      });
-}
 
-ff();
-recurring();
+// recurring();
