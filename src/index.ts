@@ -5,6 +5,7 @@ import RateLimit from 'express-rate-limit';
 import errorMiddleware from './middleware/error.middleware';
 import config from './config';
 import routes from './routes';
+import cronjobs from './utils/utils';
 const PORT = config.port || 3000;
 // create instance server
 const app:Application = express();
@@ -42,6 +43,7 @@ app.use((_req:Request, res:Response)=>{
 // start express server
 app.listen(PORT,()=>{
     console.log(`Server is starting at port:${PORT} 🥰🔥`)
+    cronjobs();
 });
 
 export default app;
