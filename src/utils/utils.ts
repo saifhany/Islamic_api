@@ -28,7 +28,7 @@ export const comparePassword = (password:string, hashed:any) => {
    
 // }
 export default async  function cronjobs() {
-    cron.schedule('59 23 * * *', async () => {
+    cron.schedule('0 0 * * *', async () => {
        const deleted =   await  prisma.post.deleteMany({where:{done:true}});
        if(deleted)
           console.log("deleted")
